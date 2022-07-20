@@ -70,9 +70,13 @@ function createBookItem(book) {
     const removeBtn = document.createElement('button')
 
     bookItem.classList.add('list-group-item')
+    bookItem.dataset.listItemTitle = book.title
     btnGroup.classList.add('buttons-container')
     readBtn.classList.add('read-status')
     removeBtn.classList.add('remove-book')
+    removeBtn.dataset.deleteTitle = book.title
+    readBtn.onclick = toggleRead
+    removeBtn.onclick = removeBook
 
     title.textContent = book.title
     author.textContent = book.author
@@ -96,6 +100,16 @@ function createBookItem(book) {
     btnGroup.appendChild(removeBtn)
     bookItem.appendChild(btnGroup)
     booksList.appendChild(bookItem)
+}
+
+const removeBook = (e) => {
+    let dataTitle = e.target.getAttribute('data-delete-title')
+    let bookItem = document.querySelector(`[data-list-item-title="${dataTitle}"`)
+    bookItem.remove()
+}
+
+const toggleRead = (e) => {
+
 }
 
 function updateBooksList() {
