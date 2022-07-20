@@ -5,35 +5,17 @@ body {
 }
 
 .container {
-    width: 600px;
     height: auto;
+    margin-top: 48px;
 }
 
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.list-group {
-    margin: 0;
-    padding: 0;
+    margin-bottom: 24px;
 }
 
 .list-group-item {
     display: flex;
-    width: auto;
-    justify-content: space-between;
-    align-items: center;
-    border: 2px solid #444;
-    padding: 12px 18px;
-    border-radius: 5px;
-}
-
-.text {
-    margin: 0;
-}
-
-button {
-    height: 32px;
 }

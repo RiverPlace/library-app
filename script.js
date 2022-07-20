@@ -1,4 +1,7 @@
 const booksList = document.querySelector('.books')
+const addBook = document.querySelector('.add-book')
+
+addBook.addEventListener('click', addBook)
 
 let myLibrary = [
     {
@@ -28,6 +31,12 @@ class Book {
     }
 }
 
-function addBookToLibrary() {
-  // do stuff here
+function addBook() {
+
+}
+
+function addBookToLibrary(book) {
+    return `
+
+    `
 }
