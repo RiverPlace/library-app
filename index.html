@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
-    <script src="./script.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -15,9 +14,9 @@
         </div>
         <div class="form-container">
             <div class="inputs-container">
-                <input type="text" id="title-input" placeholder="Title">
-                <input type="text" id="author-input" placeholder="Author">
-                <input type="number" id="pages-input" placeholder="Pages">
+                <input class="book-form-input" type="text" id="title-input" placeholder="Title">
+                <input class="book-form-input" type="text" id="author-input" placeholder="Author">
+                <input class="book-form-input" type="number" id="pages-input" placeholder="Pages">
             </div>
             <button type="button" id="add-book">
                 Add Book
@@ -25,5 +24,7 @@
         </div>
         <div class="books"></div>
     </div>
+
+    <script src="./script.js"></script>
 </body>
 </html>
