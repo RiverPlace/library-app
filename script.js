@@ -1,7 +1,6 @@
 const booksList = document.querySelector('.books')
-const addBook = document.querySelector('.add-book')
+const addBookButton = document.querySelector('.add-book')
 
-addBook.addEventListener('click', addBook)
 
 let myLibrary = [
     {
