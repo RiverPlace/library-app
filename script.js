@@ -1,7 +1,6 @@
 const booksList = document.querySelector('.books')
 const addBookButton = document.querySelector('.add-book')
 
-
 let myLibrary = [
     {
         title: 'The Big Short',
@@ -16,6 +15,12 @@ let myLibrary = [
         readStatus: true,
     }
 ]
+
+for (let book of myLibrary) {
+    let bookNode = getBookNode(book)
+    console.log('Node: ', bookNode)
+    booksList.appendChild(bookNode)
+}
 
 class Book {
     constructor(title, author, pages, readStatus) {
@@ -34,8 +39,18 @@ function addBook() {
 
 }
 
-function addBookToLibrary(book) {
-    return `
-
+function getBookNode(book) {
+    let bookNode = document.createElement('div')
+    bookNode.classList.add('list-group-item')
+    bookNode.innerHTML = `
+        <div class="list-item">
+            <h4>${book.title}</h4>
+            <p>Author: ${book.author}, Pages: ${book.pages}</p>
+        </div>
+        <div class="button-container">
+            <button class="btn btn-default read-status">Read</button>
+            <button class="btn btn-danger remove-book">X</button>
+        </div>
     `
+    return bookNode
 }
