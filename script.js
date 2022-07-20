@@ -31,7 +31,7 @@ class Library {
 const library = new Library()
 
 class Book {
-    constructor(title, author, pages, isRead) {
+    constructor(title, author, pages, isRead = false) {
         this.title = title
         this.author = author
         this.pages = pages
@@ -70,9 +70,10 @@ function createBookItem(book) {
     const removeBtn = document.createElement('button')
 
     bookItem.classList.add('list-group-item')
-    bookItem.dataset.listItemTitle = book.title
+    bookItem.dataset.listItem = book.title
     btnGroup.classList.add('buttons-container')
-    readBtn.classList.add('read-status')
+    readBtn.classList.add('read-toggle')
+    readBtn.dataset.readTitle = book.title
     removeBtn.classList.add('remove-book')
     removeBtn.dataset.deleteTitle = book.title
     readBtn.onclick = toggleRead
@@ -104,12 +105,15 @@ function createBookItem(book) {
 
 const removeBook = (e) => {
     let dataTitle = e.target.getAttribute('data-delete-title')
-    let bookItem = document.querySelector(`[data-list-item-title="${dataTitle}"`)
+    let bookItem = document.querySelector(`[data-list-item="${dataTitle}"`)
     bookItem.remove()
 }
 
 const toggleRead = (e) => {
-
+    let title = e.target.getAttribute('data-read-title')
+    let book = library.getBook(title)
+    book.isRead = !book.isRead
+    updateBooksList()
 }
 
 function updateBooksList() {
@@ -126,5 +130,3 @@ function clearForm() {
 }
 
 updateBooksList()
-
-
