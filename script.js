@@ -44,7 +44,7 @@ function getBookNode(book) {
     bookNode.classList.add('list-group-item')
     bookNode.innerHTML = `
         <div class="list-item">
-            <h4>${book.title}</h4>
+            <h4 id="book-title">${book.title}</h4>
             <p>Author: ${book.author}, Pages: ${book.pages}</p>
         </div>
         <div class="button-container">
